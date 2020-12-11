@@ -11,7 +11,7 @@ class Clients(admin.ModelAdmin):
 admin.site.register(Client, Clients)
 
 class Products(admin.ModelAdmin):
-    list_display = ('id', 'price', 'image', 'brand', 'title', 'reviewScore')
+    list_display = ('id', 'price', 'brand', 'title', 'reviewScore')
     list_display_links = ('id', 'title')
     search_fields = ['title', 'brand']
     list_per_page = 10
@@ -20,9 +20,8 @@ class Products(admin.ModelAdmin):
 admin.site.register(Product, Products)
 
 class FavoriteProducts(admin.ModelAdmin):
-    list_display = ('id', 'client', 'product')
-    list_display_links = ('id', 'client', 'product')
     search_fields = ['client']
     list_per_page = 10
+
 
 admin.site.register(FavoriteProduct, FavoriteProducts)
