@@ -23,9 +23,6 @@ class Product(models.Model):
 class FavoriteProduct(models.Model):
     client = models.OneToOneField(Client, on_delete=models.CASCADE, null=True)
     product = models.ManyToManyField(Product, related_name='favproduct')
-
-    def __str__(self):
-        return self.client
     
     class Meta:
         unique_together = [['client']]
