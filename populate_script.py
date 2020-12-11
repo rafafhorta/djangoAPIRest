@@ -29,21 +29,18 @@ brand_list = [
     'Adidas','Levis','Ricca',
     'Positivo','Rocco','Pentel','Artex' ]
 
-img_url = ['https://www.escuelapython.com/wp-content/uploads/2018/07/Django-instalacion-workspace.jpg']
-
-
 def creating_products(products_number):
     fake = Faker('pt_BR')
     Faker.seed(10)
     for _ in range(products_number):
         price = "{}".format(random.randrange(20, 150))
-        image = fake.word(ext_word_list=img_url)
+        image = fake.image_url()
         brand = fake.word(ext_word_list=brand_list)
         title = fake.word(ext_word_list=title_list)
         reviewScore = "{}".format(random.randrange(0, 10))
         p = Product(price=price, image=image, brand=brand, title=title, reviewScore=reviewScore,)
         p.save()
 
-creating_clients(20)
-creating_products(20)
+creating_clients(40)
+creating_products(40)
 print('Sucesso!')
