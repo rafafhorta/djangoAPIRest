@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from favproducts.views import ClientsViewSet, ProductsViewSet, FavoriteProductsViewSet, ListFavProducts
+from favproducts.views import ClientsViewSet, ProductsViewSet, FavoriteProductsViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -26,5 +26,4 @@ router.register('favproducts', FavoriteProductsViewSet, basename='FavoriteProduc
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('client/<int:pk>/favproducts/', ListFavProducts.as_view())
 ]

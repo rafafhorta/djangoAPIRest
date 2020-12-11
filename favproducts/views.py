@@ -1,6 +1,6 @@
 from rest_framework import viewsets, generics, filters
 from favproducts.models import Client, Product, FavoriteProduct
-from favproducts.serializer import ClientSerializer, ProductSerializer, FavoriteProductSerializer, FavProductListSerializer
+from favproducts.serializer import ClientSerializer, ProductSerializer, FavoriteProductSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
@@ -34,11 +34,3 @@ class FavoriteProductsViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
-class ListFavProducts(generics.ListAPIView):
-    """Listando os produtos favoritos"""
-    def get_queryset(self):
-        queryset = FavoriteProduct.objects.filter(client_id = self.kwargs['pk'])
-        return queryset
-    serializer_class = FavProductListSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]

@@ -20,11 +20,4 @@ class FavoriteProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = FavoriteProduct
         fields = '__all__'
-
-class FavProductListSerializer(serializers.ModelSerializer):
-    client = serializers.ReadOnlyField(source='client.name')
-    product = serializers.ReadOnlyField(source='product.title')
-    price = serializers.ReadOnlyField(source='product.price')
-    class Meta:
-        model = FavoriteProduct
-        fields = '__all__'
+        depth = 1
