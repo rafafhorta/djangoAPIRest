@@ -1,6 +1,6 @@
 import os, django
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aplicacao.settings')
 django.setup()
 
 from faker import Faker
@@ -17,5 +17,5 @@ def creating_clients(clients_number):
         p = Client(name=name, email=email)
         p.save()
 
-creating_clients(50)
+creating_clients(20)
 print('Sucesso!')
