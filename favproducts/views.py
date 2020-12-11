@@ -31,6 +31,9 @@ class FavoriteProductsViewSet(viewsets.ModelViewSet):
     """Exibindo todas as listas de produtos favoritos de cada cliente"""
     queryset = FavoriteProduct.objects.all()
     serializer_class = FavoriteProductSerializer
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    ordering_fields = ['client__name']
+    search_fields = ['client__name']
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 

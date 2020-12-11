@@ -12,7 +12,7 @@ admin.site.register(Client, Clients)
 
 class Products(admin.ModelAdmin):
     list_display = ('id', 'price', 'brand', 'title', 'reviewScore')
-    list_display_links = ('id', 'title')
+    list_display_links = ('id', 'title', 'brand', 'price')
     search_fields = ['title', 'brand']
     list_per_page = 10
     ordering = ['title']
@@ -20,8 +20,10 @@ class Products(admin.ModelAdmin):
 admin.site.register(Product, Products)
 
 class FavoriteProducts(admin.ModelAdmin):
-    search_fields = ['client']
+    list_display = ('id', 'client')
+    list_display_links = ('id', 'client')
+    search_fields = ['client__name']
     list_per_page = 10
-
+    ordering = ['client__name']
 
 admin.site.register(FavoriteProduct, FavoriteProducts)
