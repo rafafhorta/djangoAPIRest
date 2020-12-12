@@ -2,5 +2,4 @@ venv_api
 .vscode
 __pycache__
 db.sqlite3
-/aplicacao/settings.py
 static
