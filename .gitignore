@@ -3,3 +3,4 @@ venv_api
 __pycache__
 db.sqlite3
 /aplicacao/settings.py
+static

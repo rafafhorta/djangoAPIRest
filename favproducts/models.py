@@ -12,7 +12,7 @@ class Client(models.Model):
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
     price = models.DecimalField(max_digits=10,decimal_places=2)
-    image = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='product_img')
     brand = models.CharField(max_length=100)
     title = models.CharField(max_length=200)
     reviewScore = models.DecimalField(max_digits=4,decimal_places=2)
