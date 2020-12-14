@@ -6,7 +6,9 @@ Esta é uma API de Produtos Favoritos, onde é possível criar clientes, produto
 1- clonar o repositório
 2- instalar a virtual env: pip install virtualenv
 3- criar o ambiente virtual: python -m venv_aplicacao ./venv
-4- ativando o venv na powershell: venv_aplicacao\Scripts\Activate.ps1 ou no linux e mac: source venv_aplicacao/bin/activate
+    ou virtualenv venv_aplicacao
+4- ativando o venv na powershell: venv_aplicacao\Scripts\Activate.ps1
+    ou no linux e mac: source venv_aplicacao/bin/activate
 5- instale todos os módulos necessários: pip install -r requirements.txt
 6- copie o conteúdo do arquivo settings.example.py e crie um arquivo chamado settings.py na pasta aplicacao com o conteúdo copiado
 7- para gerar a secret key rode o comando: python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
