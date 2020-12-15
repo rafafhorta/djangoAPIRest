@@ -8,10 +8,11 @@ Esta é uma API de Produtos Favoritos, onde é possível criar clientes, produto
 3- criar o ambiente virtual: python -m venv_aplicacao ./venv
     ou virtualenv venv_aplicacao
 4- ativando o venv na powershell: venv_aplicacao\Scripts\Activate.ps1
+    no cmd: venv_aplicacao\Scripts\activate.bat
     ou no linux e mac: source venv_aplicacao/bin/activate
 5- instale todos os módulos necessários: pip install -r requirements.txt
 6- copie o conteúdo do arquivo settings.example.py e crie um arquivo chamado settings.py na pasta aplicacao com o conteúdo copiado
-7- para gerar a secret key rode o comando: python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+7- para gerar a secret key rode o comando: python -c "import secrets; print(secrets.token_urlsafe())"
 8- copie a secret key gerada e atualize em SECRET_KEY (dentro das aspas simples) no arquivo settings.py
 9- crie uma tabela no banco de dados Postgre e configure no arquivo settings.py  o NAME, USER e PASSWORD conforme foi criado no Postgre
 10- verifique se há migrações para serem feitas com o comando: python manage.py makemigrations
